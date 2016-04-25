@@ -1,0 +1,6 @@
+{
+  "name": "EFace",
+  "tagline": "Human Face Detection by AdaBoost",
+  "body": "### WHY this project.\r\n   The reason why I build this project is that I want to share the detail of Human Face Detection with more programmer. Maybe, scientist don't care about the implementation but programmer DO! It's not perfect at this moment. So I need your help and make this detection system more and more powerful.\r\n\r\n### How To Use\r\nRead all about it ! You can treat it like a tutorial about how face detection system works. After you know how it works, you can use your brilliant idea to modify the source code and rebuild this project into a more powerful one.\r\n\r\nIt's also a good opportunity to get more experience with Python, if you are beginner of Python\r\n\r\nDon't forget to give a feedback with your pullrequest.\r\n\r\nIt's a pity that E-Face can't achieve the performance like OpenCV for human face detection. But we do the same great thing! This detection system are programmed in pure Python(2.7)\r\n\r\n### Presentation\r\n\r\n\r\n### Authors and Contributors\r\nYou will be @mention a GitHub username, if you contribute to this project.\r\n\r\nAuthor: Jason Leaster\r\n\r\n### Support or Contact\r\nHaving trouble with project? Email me: jasonleasater@gmail.com",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
