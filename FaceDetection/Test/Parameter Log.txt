@@ -1,0 +1,14 @@
+--------------------------
+thanksgiving.png 
+
+DETECT_START = 1.2
+DETECT_END   = 2.5
+DETECT_STEP  = 0.5
+
+-------------------------
+
+nens.png
+
+DETECT_START = 1.2
+DETECT_END   = 2.0
+DETECT_STEP  = 0.4

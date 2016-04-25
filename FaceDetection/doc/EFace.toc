@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}Preparation}{3}
+\contentsline {section}{\numberline {2}Integral image}{4}
+\contentsline {section}{\numberline {3}Haar Features}{5}
+\contentsline {section}{\numberline {4}Weak Classifier}{6}
+\contentsline {section}{\numberline {5}AdaBoost}{8}
+\contentsline {section}{\numberline {6}Face Detection and optimaization}{13}
+\contentsline {subsection}{\numberline {6.1}Search and detection}{13}
+\contentsline {subsection}{\numberline {6.2}Optimalization}{14}
+\contentsline {section}{\numberline {7}Results}{15}
+\contentsline {section}{\numberline {8}Details of Implementation}{18}

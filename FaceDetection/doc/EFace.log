@@ -1,0 +1,988 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.20)  17 APR 2016 12:24
+entering extended mode
+ \write18 enabled.
+ %&-line parsing enabled.
+**./EFace.tex
+(./EFace.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2013/05/23 v2.5a Micro-typographical refinements (RS)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+\MT@toks=\toks15
+\MT@count=\count87
+LaTeX Info: Redefining \textls on input line 766.
+\MT@outer@kern=\dimen103
+LaTeX Info: Redefining \textmicrotypecontext on input line 1285.
+\MT@listname@count=\count88
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2013/05/23 v2.5a Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 915.
+LaTeX Info: Redefining \lslig on input line 915.
+\MT@outer@space=\skip43
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2013/05/23 v2.5a microtype main configuration file (RS)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count89
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen106
+\WF@size=\dimen107
+\c@WF@wrappedlines=\count90
+\WF@box=\box26
+\WF@everypar=\toks16
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count91
+\float@exts=\toks17
+\float@box=\box27
+\@float@everytoks=\toks18
+\@floatcapt=\box28
+)
+(/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen108
+\captionmargin@=\dimen109
+\captionwidth=\dimen110
+\caption@tempdima=\dimen111
+\caption@indent=\dimen112
+\caption@parindent=\dimen113
+\caption@hangindent=\dimen114
+)
+\c@ContinuedFloat=\count92
+Package caption Info: float package is loaded.
+Package caption Info: wrapfig package is loaded.
+)
+\c@KVtest=\count93
+\sf@farskip=\skip44
+\sf@captopadj=\dimen115
+\sf@capskip=\skip45
+\sf@nearskip=\skip46
+\c@subfigure=\count94
+\c@subfigure@save=\count95
+\c@lofdepth=\count96
+\c@subtable=\count97
+\c@subtable@save=\count98
+\c@lotdepth=\count99
+\sf@top=\skip47
+\sf@bottom=\skip48
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count100
+\lst@gtempboxa=\box29
+\lst@token=\toks19
+\lst@length=\count101
+\lst@currlwidth=\dimen116
+\lst@column=\count102
+\lst@pos=\count103
+\lst@lostspace=\dimen117
+\lst@width=\dimen118
+\lst@newlines=\count104
+\lst@lineno=\count105
+\lst@maxwidth=\dimen119
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
+\c@lstnumber=\count106
+\lst@skipnumbers=\count107
+\lst@framebox=\box30
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2013/08/26 1.5b listings configuration
+))
+Package: listings 2013/08/26 1.5b (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks20
+\c@algorithm=\count108
+)
+(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count109
+\c@ALC@line=\count110
+\c@ALC@rem=\count111
+\c@ALC@depth=\count112
+\ALC@tlm=\skip49
+\algorithmicindent=\skip50
+)
+(/usr/share/texlive/texmf-dist/tex/latex/leftidx/leftidx.sty
+Package: leftidx 2003/09/24 v1.03 Left indices
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks21
+\ex@=\dimen120
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen121
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count113
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count114
+\leftroot@=\count115
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count116
+\DOTSCASE@=\count117
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box31
+\strutbox@=\box32
+\big@size=\dimen122
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count118
+\c@MaxMatrixCols=\count119
+\dotsspace@=\muskip10
+\c@parentequation=\count120
+\dspbrk@lvl=\count121
+\tag@help=\toks22
+\row@=\count122
+\column@=\count123
+\maxfields@=\count124
+\andhelp@=\toks23
+\eqnshift@=\dimen123
+\alignsep@=\dimen124
+\tagshift@=\dimen125
+\tagwidth@=\dimen126
+\totwidth@=\dimen127
+\lineht@=\dimen128
+\@envbody=\toks24
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
+Package: minted 2011/09/17 v1.7 Yet another Pygments shim for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count125
+\FV@InFile=\read1
+\FV@TabBox=\box33
+\c@FancyVerbLine=\count126
+\FV@StepNumber=\count127
+\FV@OutFile=\write3
+) (/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count128
+\calc@Bcount=\count129
+\calc@Adimen=\dimen129
+\calc@Bdimen=\dimen130
+\calc@Askip=\skip54
+\calc@Bskip=\skip55
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count130
+\calc@Cskip=\skip56
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2010/10/22 v0.4 Testing for the operating system
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/catchfile.sty
+Package: catchfile 2011/03/01 v1.6 Catch the contents of a file (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+))
+runsystem(uname -s > "EFace.w18")...executed.
+
+ (./EFace.w18)
+runsystem(rm -- "EFace.w18")...executed.
+
+)
+\minted@bgbox=\box34
+\minted@code=\write4
+\@float@every@listing=\toks26
+\c@listing=\count131
+)
+runsystem(which pygmentize && touch EFace.aex)...executed.
+
+runsystem(rm EFace.aex)...executed.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count132
+\Gm@cntv=\count133
+\c@Gm@tempcnt=\count134
+\Gm@bindingoffset=\dimen131
+\Gm@wd@mp=\dimen132
+\Gm@odd@mp=\dimen133
+\Gm@even@mp=\dimen134
+\Gm@layoutwidth=\dimen135
+\Gm@layoutheight=\dimen136
+\Gm@layouthoffset=\dimen137
+\Gm@layoutvoffset=\dimen138
+\Gm@dimlist=\toks27
+)
+(/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/mathpazo.sty
+Package: mathpazo 2005/04/12 PSNFSS-v9.2a Palatino w/ Pazo Math (D.Puga, WaS) 
+\symupright=\mathgroup4
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+)) (./EFace.aux)
+\openout1 = `EFace.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 79.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ppl.fd
+File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
+)
+LaTeX Info: Redefining \microtypecontext on input line 79.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ppl.cfg
+File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
+)
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count135
+\scratchdimen=\dimen139
+\scratchbox=\box35
+\nofMPsegments=\count136
+\nofMParguments=\count137
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count138
+\MPscratchDim=\dimen140
+\MPnumerator=\count139
+\makeMPintoPDFobject=\count140
+\everyMPtoPDFconversion=\toks29
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count141
+runsystem(pygmentize -S default -f latex > EFace.pyg)...executed.
+
+
+(./EFace.pyg)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(89.62709pt, 418.25368pt, 89.6271pt)
+* v-part:(T,H,B)=(101.40665pt, 591.5302pt, 152.11pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=418.25368pt
+* \textheight=591.5302pt
+* \oddsidemargin=17.3571pt
+* \evensidemargin=17.3571pt
+* \topmargin=-7.86334pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 81.
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 89.
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 109.
+ (./EFace.toc
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 1.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 7.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+)
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 7.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlzplm.fd
+File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
+)
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 7.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omszplm.fd
+File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
+)
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 7.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxzplm.fd
+File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
+)
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 7.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
+File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
+)
+Package microtype Info: Loading generic settings for font family
+(microtype)             `zplm' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+)
+\tf@toc=\write5
+\openout5 = `EFace.toc'.
+
+ [2
+
+]
+<../figure/combinedImage.jpg, id=12, 515.9275pt x 507.8975pt>
+File: ../figure/combinedImage.jpg Graphic file (type jpg)
+
+<use ../figure/combinedImage.jpg>
+Package pdftex.def Info: ../figure/combinedImage.jpg used on input line 119.
+(pdftex.def)             Requested size: 158.93843pt x 156.46236pt.
+LaTeX Font Info:    Calculating math sizes for size <13.13995> on input line 13
+6.
+LaTeX Font Info:    Calculating math sizes for size <15.76788> on input line 13
+6.
+ [3
+
+ <../figure/combinedImage.jpg>]
+
+LaTeX Warning: Citation `RobustRealTimeFaceDetection' on page 4 undefined on in
+put line 150.
+
+
+LaTeX Warning: Citation `RobustRealTimeObjectDetection' on page 4 undefined on 
+input line 150.
+
+<../figure/bigshark.png, id=21, 317.185pt x 543.02875pt>
+File: ../figure/bigshark.png Graphic file (type png)
+
+<use ../figure/bigshark.png>
+Package pdftex.def Info: ../figure/bigshark.png used on input line 171.
+(pdftex.def)             Requested size: 125.47786pt x 180.67493pt.
+
+<../figure/integralImageOfBigShark.png, id=22, 224.84pt x 392.46625pt>
+File: ../figure/integralImageOfBigShark.png Graphic file (type png)
+
+<use ../figure/integralImageOfBigShark.png>
+Package pdftex.def Info: ../figure/integralImageOfBigShark.png used on input li
+ne 175.
+(pdftex.def)             Requested size: 125.47725pt x 180.68037pt.
+
+<../figure/face00001.png, id=23, 445.9059pt x 442.2924pt>
+File: ../figure/face00001.png Graphic file (type png)
+
+<use ../figure/face00001.png>
+Package pdftex.def Info: ../figure/face00001.png used on input line 186.
+(pdftex.def)             Requested size: 72.26494pt x 72.26646pt.
+
+<../figure/integralImageOfFace00001.png, id=25, 442.2924pt x 442.2924pt>
+File: ../figure/integralImageOfFace00001.png Graphic file (type png)
+
+<use ../figure/integralImageOfFace00001.png>
+Package pdftex.def Info: ../figure/integralImageOfFace00001.png used on input l
+ine 190.
+(pdftex.def)             Requested size: 72.26646pt x 72.26646pt.
+ [4
+
+ <../figure/bigshark.png> <../figure/integralImageOfBigShark.png> <../figure/fa
+ce00001.png> <../figure/integralImageOfFace00001.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
+
+ []
+
+
+LaTeX Warning: Citation `RobustRealTimeFaceDetection' on page 5 undefined on in
+put line 209.
+
+
+LaTeX Warning: Citation `LocalInvariantFeatureDetectors' on page 5 undefined on
+ input line 209.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--212
+
+ []
+
+<../figure/featureTypeI.png, id=31, 436.63126pt x 407.5225pt>
+File: ../figure/featureTypeI.png Graphic file (type png)
+
+<use ../figure/featureTypeI.png>
+Package pdftex.def Info: ../figure/featureTypeI.png used on input line 221.
+(pdftex.def)             Requested size: 50.58797pt x 50.58574pt.
+
+<../figure/featureTypeII.png, id=32, 382.42876pt x 416.55624pt>
+File: ../figure/featureTypeII.png Graphic file (type png)
+
+<use ../figure/featureTypeII.png>
+Package pdftex.def Info: ../figure/featureTypeII.png used on input line 225.
+(pdftex.def)             Requested size: 50.58694pt x 50.58842pt.
+
+<../figure/featureTypeIII.png, id=33, 378.41376pt x 406.51875pt>
+File: ../figure/featureTypeIII.png Graphic file (type png)
+
+<use ../figure/featureTypeIII.png>
+Package pdftex.def Info: ../figure/featureTypeIII.png used on input line 229.
+(pdftex.def)             Requested size: 50.58707pt x 50.5852pt.
+
+<../figure/featureTypeIV.png, id=34, 393.47pt x 396.48125pt>
+File: ../figure/featureTypeIV.png Graphic file (type png)
+
+<use ../figure/featureTypeIV.png>
+Package pdftex.def Info: ../figure/featureTypeIV.png used on input line 233.
+(pdftex.def)             Requested size: 50.58853pt x 50.5885pt.
+ [5
+
+ <../figure/featureTypeI.png> <../figure/featureTypeII.png> <../figure/featureT
+ypeIII.png> <../figure/featureTypeIV.png>]
+
+LaTeX Warning: Citation `ImprovedBoostingAlgorithmUsingConfidenceRatedPredictor
+s' on page 6 undefined on input line 245.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 262--263
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 264--265
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
+
+ []
+
+<../figure/simpleClassifier.png, id=38, 586.8324pt x 442.2924pt>
+File: ../figure/simpleClassifier.png Graphic file (type png)
+
+<use ../figure/simpleClassifier.png>
+Package pdftex.def Info: ../figure/simpleClassifier.png used on input line 291.
+
+(pdftex.def)             Requested size: 292.77629pt x 220.66649pt.
+ [6
+
+]
+\openout3 = `EFace.pyg'.
+
+runsystem(pygmentize -l python -f latex -F tokenmerge             -P "verboptio
+ns= " -o EFace.out.pyg EFace.pyg)...executed.
+
+ (./EFace.out.pyg
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 1.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+Package microtype Info: Loading generic settings for font family
+(microtype)             `cmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 2.
+)
+runsystem(rm EFace.out.pyg)...executed.
+
+runsystem(rm EFace.pyg)...executed.
+
+ [7 <../figure/simpleClassifier.png>]
+
+LaTeX Warning: Citation `BIASVARIANCEANDARCINGCLASSIFIERS' on page 8 undefined 
+on input line 321.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 323--324
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 330--331
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 332--333
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 334--335
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 347--348
+
+ []
+
+[8
+
+] <../figure/feature_0.jpg, id=53, 602.25pt x 602.25pt>
+File: ../figure/feature_0.jpg Graphic file (type jpg)
+
+<use ../figure/feature_0.jpg>
+Package pdftex.def Info: ../figure/feature_0.jpg used on input line 365.
+(pdftex.def)             Requested size: 50.58865pt x 50.58865pt.
+
+<../figure/feature_1.jpg, id=54, 602.25pt x 602.25pt>
+File: ../figure/feature_1.jpg Graphic file (type jpg)
+
+<use ../figure/feature_1.jpg>
+Package pdftex.def Info: ../figure/feature_1.jpg used on input line 369.
+(pdftex.def)             Requested size: 50.58865pt x 50.58865pt.
+
+<../figure/feature_2.jpg, id=55, 602.25pt x 602.25pt>
+File: ../figure/feature_2.jpg Graphic file (type jpg)
+
+<use ../figure/feature_2.jpg>
+Package pdftex.def Info: ../figure/feature_2.jpg used on input line 373.
+(pdftex.def)             Requested size: 50.58865pt x 50.58865pt.
+
+<../figure/feature_3.jpg, id=56, 602.25pt x 602.25pt>
+File: ../figure/feature_3.jpg Graphic file (type jpg)
+
+<use ../figure/feature_3.jpg>
+Package pdftex.def Info: ../figure/feature_3.jpg used on input line 377.
+(pdftex.def)             Requested size: 50.58865pt x 50.58865pt.
+
+<../figure/feature_4.jpg, id=57, 602.25pt x 602.25pt>
+File: ../figure/feature_4.jpg Graphic file (type jpg)
+
+<use ../figure/feature_4.jpg>
+Package pdftex.def Info: ../figure/feature_4.jpg used on input line 381.
+(pdftex.def)             Requested size: 50.58865pt x 50.58865pt.
+
+<../figure/feature_5.jpg, id=58, 602.25pt x 602.25pt>
+File: ../figure/feature_5.jpg Graphic file (type jpg)
+
+<use ../figure/feature_5.jpg>
+Package pdftex.def Info: ../figure/feature_5.jpg used on input line 385.
+(pdftex.def)             Requested size: 50.58865pt x 50.58865pt.
+
+<../figure/feature_6.jpg, id=59, 602.25pt x 602.25pt>
+File: ../figure/feature_6.jpg Graphic file (type jpg)
+
+<use ../figure/feature_6.jpg>
+Package pdftex.def Info: ../figure/feature_6.jpg used on input line 389.
+(pdftex.def)             Requested size: 50.58865pt x 50.58865pt.
+
+<../figure/feature_7.jpg, id=60, 602.25pt x 602.25pt>
+File: ../figure/feature_7.jpg Graphic file (type jpg)
+
+<use ../figure/feature_7.jpg>
+Package pdftex.def Info: ../figure/feature_7.jpg used on input line 393.
+(pdftex.def)             Requested size: 50.58865pt x 50.58865pt.
+
+<../figure/feature_8.jpg, id=61, 602.25pt x 602.25pt>
+File: ../figure/feature_8.jpg Graphic file (type jpg)
+
+<use ../figure/feature_8.jpg>
+Package pdftex.def Info: ../figure/feature_8.jpg used on input line 397.
+(pdftex.def)             Requested size: 50.58865pt x 50.58865pt.
+
+<../figure/feature_9.jpg, id=62, 602.25pt x 602.25pt>
+File: ../figure/feature_9.jpg Graphic file (type jpg)
+
+<use ../figure/feature_9.jpg>
+Package pdftex.def Info: ../figure/feature_9.jpg used on input line 401.
+(pdftex.def)             Requested size: 50.58865pt x 50.58865pt.
+
+<../figure/combinedClassifierPic.png, id=63, 442.2924pt x 442.2924pt>
+File: ../figure/combinedClassifierPic.png Graphic file (type png)
+
+<use ../figure/combinedClassifierPic.png>
+Package pdftex.def Info: ../figure/combinedClassifierPic.png used on input line
+ 411.
+(pdftex.def)             Requested size: 195.1289pt x 195.1289pt.
+
+<../figure/humanFace.png, id=64, 433.62pt x 433.62pt>
+File: ../figure/humanFace.png Graphic file (type png)
+
+<use ../figure/humanFace.png>
+Package pdftex.def Info: ../figure/humanFace.png used on input line 415.
+(pdftex.def)             Requested size: 195.1272pt x 195.1272pt.
+ [9
+
+ <../figure/feature_0.jpg> <../figure/feature_1.jpg> <../figure/feature_2.jpg> 
+<../figure/feature_3.jpg> <../figure/feature_4.jpg> <../figure/feature_5.jpg> <
+../figure/feature_6.jpg> <../figure/feature_7.jpg> <../figure/feature_8.jpg> <.
+./figure/feature_9.jpg> <../figure/combinedClassifierPic.png> <../figure/humanF
+ace.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 476--477
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--479
+
+ []
+
+<../figure/roc.jpg, id=70, 803.0pt x 602.25pt>
+File: ../figure/roc.jpg Graphic file (type jpg)
+ <use ../figure/roc.jpg>
+Package pdftex.def Info: ../figure/roc.jpg used on input line 482.
+(pdftex.def)             Requested size: 267.40462pt x 267.40767pt.
+ [10
+
+]
+[11 <../figure/roc.jpg>]
+\openout3 = `EFace.pyg'.
+
+runsystem(pygmentize -l python -f latex -F tokenmerge             -P "verboptio
+ns= " -o EFace.out.pyg EFace.pyg)...executed.
+
+ (./EFace.out.pyg)
+runsystem(rm EFace.out.pyg)...executed.
+
+runsystem(rm EFace.pyg)...executed.
+
+ [12
+
+]
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 540.
+
+<../figure/searchWindow.png, id=80, 185.94469pt x 305.64188pt>
+File: ../figure/searchWindow.png Graphic file (type png)
+
+<use ../figure/searchWindow.png>
+Package pdftex.def Info: ../figure/searchWindow.png used on input line 547.
+(pdftex.def)             Requested size: 195.13417pt x 267.41264pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 552--553
+
+ []
+
+[13
+
+ <../figure/searchWindow.png>]
+<../figure/overlappedResult.png, id=85, 401.5pt x 609.27625pt>
+File: ../figure/overlappedResult.png Graphic file (type png)
+
+<use ../figure/overlappedResult.png>
+Package pdftex.def Info: ../figure/overlappedResult.png used on input line 593.
+
+(pdftex.def)             Requested size: 108.40643pt x 122.85713pt.
+
+<../figure/afterOptimalization.png, id=86, 402.50375pt x 618.31pt>
+File: ../figure/afterOptimalization.png Graphic file (type png)
+
+<use ../figure/afterOptimalization.png>
+Package pdftex.def Info: ../figure/afterOptimalization.png used on input line 5
+97.
+(pdftex.def)             Requested size: 108.40108pt x 122.85786pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 604--605
+
+ []
+
+File: ../figure/afterOptimalization.png Graphic file (type png)
+<use ../figure/afterOptimalization.png>
+Package pdftex.def Info: ../figure/afterOptimalization.png used on input line 6
+11.
+(pdftex.def)             Requested size: 195.1281pt x 245.71573pt.
+
+<../figure/nens.png, id=87, 586.8324pt x 442.2924pt>
+File: ../figure/nens.png Graphic file (type png)
+ <use ../figure/nens.png>
+Package pdftex.def Info: ../figure/nens.png used on input line 615.
+(pdftex.def)             Requested size: 216.80223pt x 216.8129pt.
+
+[14
+
+ <../figure/overlappedResult.png> <../figure/afterOptimalization.png>]
+[15 <../figure/nens.png>] <../figure/ew.png, id=95, 586.8324pt x 442.2924pt>
+File: ../figure/ew.png Graphic file (type png)
+
+<use ../figure/ew.png>
+Package pdftex.def Info: ../figure/ew.png used on input line 625.
+(pdftex.def)             Requested size: 267.40315pt x 267.40213pt.
+ <../figure/harry.png, id=96, 586.8324pt x 442.2924pt>
+File: ../figure/harry.png Graphic file (type png)
+
+<use ../figure/harry.png>
+Package pdftex.def Info: ../figure/harry.png used on input line 629.
+(pdftex.def)             Requested size: 267.40315pt x 267.40213pt.
+ [16
+
+ <../figure/ew.png> <../figure/harry.png>]
+<../figure/herben.png, id=102, 586.8324pt x 442.2924pt>
+File: ../figure/herben.png Graphic file (type png)
+
+<use ../figure/herben.png>
+Package pdftex.def Info: ../figure/herben.png used on input line 638.
+(pdftex.def)             Requested size: 267.40315pt x 267.40213pt.
+
+<../figure/boy.png, id=103, 586.8324pt x 442.2924pt>
+File: ../figure/boy.png Graphic file (type png)
+ <use ../figure/boy.png>
+Package pdftex.def Info: ../figure/boy.png used on input line 642.
+(pdftex.def)             Requested size: 195.1238pt x 267.40213pt.
+
+<../figure/gril_and_boy.png, id=104, 586.8324pt x 442.2924pt>
+File: ../figure/gril_and_boy.png Graphic file (type png)
+
+<use ../figure/gril_and_boy.png>
+Package pdftex.def Info: ../figure/gril_and_boy.png used on input line 646.
+(pdftex.def)             Requested size: 195.1238pt x 267.40213pt.
+ [17 <../figure/herben.png> <../figure/boy.png> <../figure/gril_and_boy.png>]
+<../figure/architecture.png, id=111, 471.26062pt x 424.58624pt>
+File: ../figure/architecture.png Graphic file (type png)
+
+<use ../figure/architecture.png>
+Package pdftex.def Info: ../figure/architecture.png used on input line 653.
+(pdftex.def)             Requested size: 267.3989pt x 267.413pt.
+
+<../figure/concurrent.png, id=112, 405.76593pt x 324.46219pt>
+File: ../figure/concurrent.png Graphic file (type png)
+
+<use ../figure/concurrent.png>
+Package pdftex.def Info: ../figure/concurrent.png used on input line 659.
+(pdftex.def)             Requested size: 267.40388pt x 195.12933pt.
+ [18
+
+
+ <../figure/architecture.png> <../figure/concurrent.png>] [19
+
+]
+No file EFace.bbl.
+(./EFace.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 8833 strings out of 493304
+ 134815 string characters out of 6139871
+ 233362 words of memory out of 5000000
+ 11884 multiletter control sequences out of 15000+600000
+ 72745 words of font info for 241 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 44i,14n,47p,597b,586s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texliv
+e/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplm
+r.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></u
+sr/share/texmf/fonts/type1/public/cm-super/sfit1095.pfb></usr/share/texmf/fonts
+/type1/public/cm-super/sftt1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino
+/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
+>
+Output written on EFace.pdf (19 pages, 3374879 bytes).
+PDF statistics:
+ 160 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 46251 words of extra memory for PDF output out of 51595 (max. 10000000)
+
