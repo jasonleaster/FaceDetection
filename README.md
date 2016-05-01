@@ -64,11 +64,11 @@ To detect faces in a image, you have to define the **TEST_IMG** which is the pat
 I'm still working on making this project more powerful. So, here is the
 presentation of **current** result.
 
-![images](./figure/monalisa.png)
+![images](./FaceDetection/figure/monalisa.png)
 
-![images](./figure/nens.png)
+![images](./FaceDetection/figure/nens.png)
 
-![images](./figure/soccer.png)
+![images](./FaceDetection/figure/soccer.png)
 
 ### Programming Style:
 
