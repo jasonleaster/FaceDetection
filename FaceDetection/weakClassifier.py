@@ -4,6 +4,8 @@ E-mail      :   jasonleaster@163.com
 Date        :   2015.11.22
 File        :   weakClassifier.py
 
+License     :   MIT License
+
 """
 
 from matplotlib import pyplot
@@ -42,28 +44,30 @@ class WeakClassifier:
 
             """
             It will cost a lot of memory, if I use @Mat to initialize
-            the @self._Mat like this:
-                self._Mat = numpy.array(Mat)
+            the @self._mat like this:
+                self._mat = numpy.array(Mat)
 
             constructor @numpy.array will return a new object which's
             message is the same as @Mat
 
-            To save memory, I just set the data member @self._Mat
+            To save memory, I just set the data member @self._mat
             the same as the parameter passed into this constructor,
             which means that they point to the same address.
+
+            Make sure this weak classifier will not modify the inputed mat.
             """
-            self._Mat = Mat
-            self._Tag = Tag
+            self._mat = Mat
+            self._label = Tag
 
             # sampleDim == the number of features
-            self.sampleDim, self.sampleNum = self._Mat.shape
+            self.sampleDim, self.sampleNum = self._mat.shape
 
             if W == None:
-                self.NumPos = numpy.count_nonzero(self._Tag == LABEL_POSITIVE)
-                self.NumNeg = numpy.count_nonzero(self._Tag == LABEL_NEGATIVE)
-                pos_W = [1.0/(2 * self.NumPos) for i in xrange(self.NumPos)]
+                self.numPos = numpy.count_nonzero(self._label == LABEL_POSITIVE)
+                self.numNeg = numpy.count_nonzero(self._label == LABEL_NEGATIVE)
+                pos_W = [1.0/(2 * self.numPos) for i in xrange(self.numPos)]
                             
-                neg_W = [1.0/(2 * self.NumNeg) for i in xrange(self.NumNeg)]
+                neg_W = [1.0/(2 * self.numNeg) for i in xrange(self.numNeg)]
                 self.weight = numpy.array(pos_W + neg_W)
 
             else:
@@ -78,23 +82,18 @@ class WeakClassifier:
             
 
     def optimal(self, d):
-        sumPos = 0.
-        sumNeg = 0.
-
-        sumPosW = 0.
-        sumNegW = 0.
 
         # for positive sample
-        idx = (self._Tag + LABEL_POSITIVE) / (LABEL_POSITIVE * 2)
+        idx = (self._label + LABEL_POSITIVE) / (LABEL_POSITIVE * 2)
         weight = self.weight  * idx
-        vector = self._Mat[d] * idx
+        vector = self._mat[d] * idx
         sumPos = weight.dot(vector)
         sumPosW= weight.sum()
 
         # for negative sample
-        idx = (self._Tag + LABEL_NEGATIVE) / (LABEL_NEGATIVE * 2)
+        idx = (self._label + LABEL_NEGATIVE) / (LABEL_NEGATIVE * 2)
         weight = self.weight  * idx
-        vector = self._Mat[d] * idx
+        vector = self._mat[d] * idx
         sumNeg = weight.dot(vector)
         sumNegW= weight.sum()
 
@@ -108,11 +107,11 @@ class WeakClassifier:
         sumNegW = 0.
 
         for i in xrange(self.sampleNum):
-            if self._Tag[i] == LABEL_POSITIVE:
-                sumPos  += self.weight[i] * self._Mat[d][i]
+            if self._label[i] == LABEL_POSITIVE:
+                sumPos  += self.weight[i] * self._mat[d][i]
                 sumPosW += self.weight[i]
             else:
-                sumNeg  += self.weight[i] * self._Mat[d][i]
+                sumNeg  += self.weight[i] * self._mat[d][i]
                 sumNegW += self.weight[i]
         """
                 
@@ -126,13 +125,13 @@ class WeakClassifier:
         for direction in [-1, 1]:
             errorRate = 0.
 
-            self.output[self._Mat[d] * direction < threshold * direction]\
+            self.output[self._mat[d] * direction < threshold * direction]\
                     = LABEL_POSITIVE
 
-            self.output[self._Mat[d] * direction >= threshold * direction]\
+            self.output[self._mat[d] * direction >= threshold * direction]\
                     = LABEL_NEGATIVE
 
-            errorRate = self.weight[ self.output != self._Tag].sum()
+            errorRate = self.weight[ self.output != self._label].sum()
 
             """
             Code beyond there is just optimal version of this one.
@@ -141,12 +140,12 @@ class WeakClassifier:
             self.output *= 0 # reset the output
             start = time.time()
             for i in xrange(self.sampleNum):
-                if self._Mat[d][i] *direction < threshold * direction:
+                if self._mat[d][i] *direction < threshold * direction:
                     self.output[i] = LABEL_POSITIVE
                 else:
                     self.output[i] = LABEL_NEGATIVE
 
-                if self.output[i] != self._Tag[i]:
+                if self.output[i] != self._label[i]:
                     errorRate += self.weight[i]
             """
 
@@ -200,8 +199,8 @@ class WeakClassifier:
             dim = self.opt_dimension
 
         N = 10 # the number of center
-        MaxVal = numpy.max(self._Mat[dim])
-        MinVal = numpy.min(self._Mat[dim])
+        MaxVal = numpy.max(self._mat[dim])
+        MinVal = numpy.min(self._mat[dim])
 
         scope = (MaxVal - MinVal) / N
 
@@ -210,8 +209,8 @@ class WeakClassifier:
 
         for j in xrange(N):
             for i in xrange(self.sampleNum):
-                if abs(self._Mat[dim][i] - centers[j]) < scope/2:
-                    if self._Tag[i] == LABEL_POSITIVE:
+                if abs(self._mat[dim][i] - centers[j]) < scope/2:
+                    if self._label[i] == LABEL_POSITIVE:
                         counter[j][1] += 1
                     else:
                         counter[j][0] += 1
@@ -240,11 +239,11 @@ class WeakClassifier:
         sumPos = 0.
         sumNeg = 0.
         for i in xrange(self.sampleNum):
-            if self._Tag[i] == LABEL_POSITIVE:
-                sumPos  += self.weight[i] * self._Mat[dim][i]
+            if self._label[i] == LABEL_POSITIVE:
+                sumPos  += self.weight[i] * self._mat[dim][i]
                 sumPosW += self.weight[i]
             else:
-                sumNeg  += self.weight[i] * self._Mat[dim][i]
+                sumNeg  += self.weight[i] * self._mat[dim][i]
                 sumNegW += self.weight[i]
                 
         miuPos = sumPos / sumPosW

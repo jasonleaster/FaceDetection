@@ -1,9 +1,10 @@
 """
-Programmer  :   EOF   (**ALL RIGHT RESERVED**)
+Programmer  :   EOF
 E-mail      :   jasonleaster@163.com
 Cooperator  :   Wei Chen.
 Date        :   2015.11.22
 File        :   adaboost.py
+License     :   MIT License
 
 File Description:
     AdaBoost is a machine learning meta-algorithm.
@@ -14,10 +15,8 @@ We help each other and learn this algorithm.
 
 """
 
-from config import POSITIVE_SAMPLE
-from config import NEGATIVE_SAMPLE
-
 from config import DEBUG_MODEL
+from config import USING_CASCADE
 
 from config import LABEL_POSITIVE
 from config import LABEL_NEGATIVE
@@ -74,8 +73,8 @@ def getCachedAdaBoost(mat = None, label = None, filename = "", limit = 0):
 
         classifier = model.Weaker(train = False)
         classifier.constructor(dimension, direction, threshold)
-        classifier._Mat = mat
-        classifier._Tag = label
+        classifier._mat = mat
+        classifier._label = label
 
         if mat is not None:
             classifier.sampleNum = mat.shape[1]
@@ -84,8 +83,8 @@ def getCachedAdaBoost(mat = None, label = None, filename = "", limit = 0):
         model.alpha[i/4] = alpha
         model.N         += 1
 
-    model._Mat = mat
-    model._Tag = label
+    model._mat = mat
+    model._label = label
     if model.N > limit:
         model.N    = limit
 
@@ -115,18 +114,21 @@ class AdaBoost:
 
     def __init__(self, Mat = None, Tag = None, classifier = WeakClassifier, train = True, limit = 4):
         if train == True:
-            self._Mat = Mat
-            self._Tag = Tag
+            self._mat   = Mat
+            self._label = Tag
 
-            self.samplesDim, self.samplesNum = self._Mat.shape
+            self.samplesDim, self.samplesNum = self._mat.shape
 
             # Make sure that the inputted data's dimension is right.
-            assert self.samplesNum == self._Tag.size
+            assert self.samplesNum == self._label.size
+
+            self.posNum = numpy.count_nonzero(self._label == LABEL_POSITIVE)
+            self.negNum = numpy.count_nonzero(self._label == LABEL_NEGATIVE)
 
             # Initialization of weight
-            pos_W = [1.0/(2 * POSITIVE_SAMPLE) for i in range(POSITIVE_SAMPLE)]
+            pos_W = [1.0/(2 * self.posNum) for i in range(self.posNum)]
 
-            neg_W = [1.0/(2 * NEGATIVE_SAMPLE) for i in range(NEGATIVE_SAMPLE)]
+            neg_W = [1.0/(2 * self.negNum) for i in range(self.negNum)]
             self.W = numpy.array(pos_W + neg_W)
 
             self.accuracy = []
@@ -150,19 +152,19 @@ class AdaBoost:
 
     def is_good_enough(self):
 
-        output = self.prediction(self._Mat, th = 0)
+        output = self.prediction(self._mat, self.th)
 
-        correct = numpy.count_nonzero(output == self._Tag)/(self.samplesNum*1.)
+        correct = numpy.count_nonzero(output == self._label)/(self.samplesNum*1.)
         self.accuracy.append( correct)
 
-        self.detectionRate = numpy.count_nonzero(output[0:POSITIVE_SAMPLE] == LABEL_POSITIVE) * 1./ POSITIVE_SAMPLE
+        self.detectionRate = numpy.count_nonzero(output[0:self.posNum] == LABEL_POSITIVE) * 1./ self.posNum
 
         Num_tp = 0 # Number of true positive
         Num_fn = 0 # Number of false negative
         Num_tn = 0 # Number of true negative
         Num_fp = 0 # Number of false positive
         for i in xrange(self.samplesNum):
-            if self._Tag[i] == LABEL_POSITIVE:
+            if self._label[i] == LABEL_POSITIVE:
                 if output[i] == LABEL_POSITIVE:
                     Num_tp += 1
                 else:
@@ -192,7 +194,7 @@ class AdaBoost:
             if DEBUG_MODEL == True:
                 weaker_start_time = time.time()
 
-            self.G[m] = self.Weaker(self._Mat, self._Tag, self.W)
+            self.G[m] = self.Weaker(self._mat, self._label, self.W)
             
             errorRate = self.G[m].train()
 
@@ -206,7 +208,17 @@ class AdaBoost:
             beta = errorRate / (1 - errorRate)
             self.alpha[m] = numpy.log(1/beta)
 
-            output = self.G[m].prediction(self._Mat)
+            output = self.G[m].prediction(self._mat)
+
+            for i in xrange(self.samplesNum):
+                #self.W[i] *= numpy.exp(-self.alpha[m] * self._label[i] * output[i])
+                if self._label[i] == output[i]:
+                    self.W[i] *=  beta
+
+            self.W /= sum(self.W)
+
+            if USING_CASCADE is True:
+                self.th, self.detectionRate = self.findThreshold(EXPECTED_TPR)
 
             if self.is_good_enough():
                 print (self.N) ," weak classifier is enough to ",
@@ -214,14 +226,7 @@ class AdaBoost:
                 print "Training Done :)"
                 break
 
-            for i in xrange(self.samplesNum):
-                #self.W[i] *= numpy.exp(-self.alpha[m] * self._Tag[i] * output[i])
-                if self._Tag[i] == output[i]:
-                    self.W[i] *=  beta
-
-            self.W /= sum(self.W)
-
-            if DEBUG_MODEL == True:
+            if DEBUG_MODEL is True:
                 print "weakClassifier:", self.N
                 print "errorRate     :", errorRate
                 print "accuracy      :", self.accuracy[-1]
@@ -229,15 +234,14 @@ class AdaBoost:
                 print "AdaBoost's Th :", self.th
                 print "alpha         :", self.alpha[m]
 
-
         #self.showErrRates()
         #self.showROC()
 
         print "The time cost of training this AdaBoost model:",\
                 time.time() - adaboost_start_time
 
-        output = self.prediction(self._Mat)
-        return output, self.fpr * NEGATIVE_SAMPLE
+        output = self.prediction(self._mat, self.th)
+        return output, self.fpr
 
 
     def grade(self, Mat):
@@ -246,12 +250,13 @@ class AdaBoost:
 
         sampleNum = Mat.shape[1]
 
-        output = numpy.zeros(sampleNum, dtype = numpy.float)
+        output = numpy.zeros(sampleNum, dtype = numpy.float16)
 
         for i in xrange(self.N):
             output += self.G[i].prediction(Mat) * self.alpha[i]
 
         return output
+
 
     def prediction(self, Mat, th = None):
 
@@ -277,25 +282,25 @@ class AdaBoost:
         return output
 
 
-    def findThreshold(self, expected_fpr):
+    def findThreshold(self, expected_tpr):
         detectionRate = 0.
         best_th       = None
 
         low_bound = -sum(self.alpha)
         up__bound = +sum(self.alpha)
         step      = -0.1
-        threshold = numpy.arange(up__bound, low_bound, step)
+        threshold = numpy.arange(up__bound - step, low_bound + step, step)
 
         for t in xrange(threshold.size):
 
-            output = self.prediction(self._Mat, threshold[t])
+            output = self.prediction(self._mat, threshold[t])
 
             Num_tp = 0 # Number of true positive
             Num_fn = 0 # Number of false negative
             Num_tn = 0 # Number of true negative
             Num_fp = 0 # Number of false positive
             for i in range(self.samplesNum):
-                if self._Tag[i] == LABEL_POSITIVE:
+                if self._label[i] == LABEL_POSITIVE:
                     if output[i] == LABEL_POSITIVE:
                         Num_tp += 1
                     else:
@@ -309,9 +314,9 @@ class AdaBoost:
             tpr = Num_tp * 1./(Num_tp + Num_fn)
             fpr = Num_fp * 1./(Num_tn + Num_fp)
 
-            if fpr > expected_fpr:
+            if tpr >= expected_tpr:
 
-                detectionRate = numpy.count_nonzero(output[0:POSITIVE_SAMPLE] == LABEL_POSITIVE) * 1./ POSITIVE_SAMPLE
+                detectionRate = numpy.count_nonzero(output[0:self.posNum] == LABEL_POSITIVE) * 1./ self.posNum
 
                 best_th = threshold[t]
                 break
@@ -348,14 +353,14 @@ class AdaBoost:
 
         for t in xrange(threshold.size):
 
-            output = self.prediction(self._Mat, threshold[t])
+            output = self.prediction(self._mat, threshold[t])
 
             Num_tp = 0 # Number of true positive
             Num_fn = 0 # Number of false negative
             Num_tn = 0 # Number of true negative
             Num_fp = 0 # Number of false positive
             for i in range(self.samplesNum):
-                if self._Tag[i] == LABEL_POSITIVE:
+                if self._label[i] == LABEL_POSITIVE:
                     if output[i] == LABEL_POSITIVE:
                         Num_tp += 1
                     else:
@@ -421,6 +426,7 @@ class AdaBoost:
         from config import HAAR_FEATURE_TYPE_II
         from config import HAAR_FEATURE_TYPE_III
         from config import HAAR_FEATURE_TYPE_IV
+        from config import HAAR_FEATURE_TYPE_V
 
         IMG_WIDTH  = TRAINING_IMG_WIDTH
         IMG_HEIGHT = TRAINING_IMG_HEIGHT
@@ -448,41 +454,59 @@ class AdaBoost:
             assert y >= 0 and y < IMG_HEIGHT
             assert width > 0 and height > 0
 
+            if direction == +1:
+                black = BLACK
+                white = WHITE
+            else:
+                black = WHITE
+                white = BLACK
+
             if types == HAAR_FEATURE_TYPE_I:
                 for i in xrange(y, y + height * 2):
                     for j in xrange(x, x + width):
                         if i < y + height:
-                            image[i][j] = BLACK
+                            image[i][j] = black
                         else:
-                            image[i][j] = WHITE
+                            image[i][j] = white
 
             elif types == HAAR_FEATURE_TYPE_II:
                 for i in xrange(y, y + height):
                     for j in xrange(x, x + width * 2):
                         if j < x + width:
-                            image[i][j] = WHITE
+                            image[i][j] = white
                         else:
-                            image[i][j] = BLACK
+                            image[i][j] = black
 
             elif types == HAAR_FEATURE_TYPE_III:
                 for i in xrange(y, y + height):
                     for j in xrange(x, x + width * 3):
                         if j >= (x + width) and j < (x + width * 2):
-                            image[i][j] = BLACK
+                            image[i][j] = black
                         else:
-                            image[i][j] = WHITE
+                            image[i][j] = white
 
             elif types == HAAR_FEATURE_TYPE_IV:
+                for i in xrange(y, y + height*3):
+                    for j in xrange(x, x + width):
+                        if i >= (y + height) and i < (y + height * 2):
+                            image[i][j] = black
+                        else:
+                            image[i][j] = white
+
+            elif types == HAAR_FEATURE_TYPE_V:
                 for i in xrange(y, y + height * 2):
                     for j in xrange(x, x + width * 2):
                         if (j < x + width and i < y + height) or\
                            (j >= x + width and i >= y + height):
-                            image[i][j] = WHITE
+                            image[i][j] = white
                         else:
-                            image[i][j] = BLACK
+                            image[i][j] = black
+            else:
+                raise Exception("Unkown type feature")
 
             #classifierPic += image * alpha * direction
-            classifierPic += image * direction
+            classifierPic += image
+
 
             pyplot.matshow(image, cmap = "gray")
             if DEBUG_MODEL == True:
@@ -490,11 +514,9 @@ class AdaBoost:
             else:
                 pyplot.savefig(FIGURES + "feature_" + str(n) + ".jpg")
 
-        #summer = classifierPic.sum()
-
-        #classifierPic /= (summer * 1.)
-
-        pylab.imshow(classifierPic, cmap = "gray")
+        from image import Image
+        classifierPic = Image._normalization(classifierPic)
+        pylab.matshow(classifierPic, cmap = "gray")
         if DEBUG_MODEL == True:
             pylab.show()
         else:

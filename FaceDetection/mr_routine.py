@@ -1,3 +1,10 @@
+"""
+Programmer  :   EOF
+File        :   mr_routine.py
+Date        :   2015.12.29
+E-mail      :   jasonleaster@163.com
+
+"""
 from config     import TRAINING_IMG_WIDTH
 from config     import TRAINING_IMG_HEIGHT
 
@@ -24,7 +31,7 @@ def routine(images, filename):
 
     haar = Feature(TRAINING_IMG_WIDTH, TRAINING_IMG_HEIGHT)
 
-    mat = numpy.zeros((haar.featuresNum, tot_samples))
+    mat = numpy.zeros((haar.featuresNum, tot_samples), dtype = numpy.float32)
 
     for i in xrange(tot_samples):
         featureVec = haar.calFeatureForImg(images[i])

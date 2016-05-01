@@ -67,7 +67,7 @@ def reduce():
 
     haar = Feature(TRAINING_IMG_WIDTH, TRAINING_IMG_HEIGHT)
 
-    mat  = numpy.zeros((haar.featuresNum, tot_samples))
+    mat  = numpy.zeros((haar.featuresNum, tot_samples), numpy.float32)
     sample_readed = 0
     for i in xrange(PROCESS_NUM):
         for m in xrange(mats[i].shape[0]): # feature number

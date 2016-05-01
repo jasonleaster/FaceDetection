@@ -16,6 +16,8 @@ from time import time
 
 from multiprocessing import  freeze_support
 
+raise Exception("Unimplemented Cascade")
+
 if __name__ == "__main__":
     freeze_support()
 
@@ -24,13 +26,15 @@ if __name__ == "__main__":
     end_time   = time()
 
     print "total Cost time: ", end_time - start_time
-    
+
     try:
         model.train()
         model.save()
     except KeyboardInterrupt:
         print "key board interrupt happened. training pause."
     
+    
 
 	
+
 

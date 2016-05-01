@@ -4,6 +4,8 @@ File        :   cascade.py
 Date        :   2016.01.17
 E-mail      :   jasonleaster@163.com
 
+License     :   MIT License
+
 """
 
 
@@ -28,7 +30,7 @@ import numpy
 
 class Cascade:
 
-    def __init__(self, face_dir = "", nonface_dir = "", train = True, limit = 3):
+    def __init__(self, face_dir = "", nonface_dir = "", train = True, limit = 30):
         #tot_samples = 0
 
         self.Face    = ImageSet(face_dir,    sampleNum = POSITIVE_SAMPLE)
@@ -48,7 +50,6 @@ class Cascade:
             if DEBUG_MODEL is True:
                 self._mat = numpy.zeros((self.haar.featuresNum, tot_samples))
 
-
                 for i in xrange(self.Face.sampleNum):
                     featureVec = self.haar.calFeatureForImg(self.Face.images[i])
                     for j in xrange(self.haar.featuresNum):
@@ -67,8 +68,6 @@ class Cascade:
                 map(self.Face, self.nonFace)
                 self._mat = reduce()
 
-
-
         featureNum, sampleNum = self._mat.shape
 
         assert sampleNum  == (POSITIVE_SAMPLE + NEGATIVE_SAMPLE)
@@ -84,48 +83,76 @@ class Cascade:
 
 
     def train(self):
-        FPR = 1.0
+
+        raise ("Unfinished")
+
         detection_rate = 0
-        #while FPR > 0.1 and self.classifierNum < self.limit:
+        from config import EXPECTED_FPR_PRE_LAYYER
+        from config import EXPECTED_FPR
+        from config import LABEL_NEGATIVE
+
+        cur_fpr = 1.0
+        mat   = self._mat
+        label = self._label
+
         for i in xrange(self.limit):
 
-            cache_filename = ADABOOST_CACHE_FILE + str(i)
-
-            if os.path.isfile(cache_filename):
-                self.strong_classifier[i] = getCachedAdaBoost(mat     = self._mat,
-                                                              label   = self._label,
-                                                              filename= cache_filename,
-                                                              limit   = 30)
+            if cur_fpr < EXPECTED_FPR:
+                break
             else:
-                self.strong_classifier[i] = AdaBoost(self._mat, self._label, limit = ADABOOST_LIMIT)
-                output, fp_num = self.strong_classifier[i].train()
-                self.strong_classifier[i].saveModel(cache_filename)
-                self.updateTrainingDate(output, fp_num)
+                cache_filename = ADABOOST_CACHE_FILE + str(i)
 
-            self.strong_classifier[i].makeClassifierPic()
+                if os.path.isfile(cache_filename):
+                    self.strong_classifier[i] = getCachedAdaBoost(mat     = self._mat,
+                                                                  label   = self._label,
+                                                                  filename= cache_filename,
+                                                                  limit   = ADABOOST_LIMIT)
+                else:
+                    self.strong_classifier[i] = AdaBoost(mat, label, limit = ADABOOST_LIMIT)
+                    output, fpr = self.strong_classifier[i].train()
 
-            self.classifierNum += 1
+                    cur_fpr *= fpr
+
+                    fp_num = fpr * numpy.count_nonzero(label == LABEL_NEGATIVE)
+
+                    self.strong_classifier[i].saveModel(cache_filename)
+                    mat, label = self.updateTrainingDate(mat, output, fp_num)
+
+                self.classifierNum += 1
 
 
-    def updateTrainingDate(self, output, fp_num):
+    def updateTrainingDate(self, mat, output, fp_num):
+
+        fp_num = int(fp_num)
 
         assert len(output) == self._label.size
 
-        mat = numpy.zeros((FEATURE_NUM, POSITIVE_SAMPLE + fp_num), dtype=numpy.float16)
+        _mat = numpy.zeros((FEATURE_NUM, POSITIVE_SAMPLE + fp_num), dtype=numpy.float16)
 
+        _mat[:, :POSITIVE_SAMPLE] = mat[:, :POSITIVE_SAMPLE]
+        """
         for i in xrange(POSITIVE_SAMPLE):
-            for j in xrange(self.haar.featuresNum):
+            for j in xrange(FEATURE_NUM):
                 mat[j][i] = self._mat[j][i]
+        """
 
         counter = 0
         # only reserve negative samples which are classified wrong
         for i in xrange(POSITIVE_SAMPLE, self._label.size):
             if output[i] != self._label[i]:
-                for j in xrange(self.haar.featuresNum):
-                    mat[j][POSITIVE_SAMPLE + counter] = self._mat[j][i]
+                for j in xrange(FEATURE_NUM):
+                    _mat[j][POSITIVE_SAMPLE + counter] = mat[j][i]
                 counter += 1
 
-        self._mat = mat
+        assert counter == fp_num
+
+        Label_Face    = [+1 for i in xrange(POSITIVE_SAMPLE)]
+        Label_NonFace = [-1 for i in xrange(fp_num)]
+
+        _label = numpy.array(Label_Face + Label_NonFace)
+
+        return _mat, _label
+
 
     def predict(self):
 
@@ -141,3 +168,4 @@ class Cascade:
 
     def is_goodenough(self):
         pass
+

@@ -1,8 +1,9 @@
 """
 Programmer  :   EOF
-File        :   init_training_set.py
+File        :   image.py
 Date        :   2015.12.29
 E-mail      :   jasonleaster@163.com
+License     :   MIT License
 
 Description :
     This script file will initialize the image set
@@ -17,7 +18,9 @@ import pylab
 from matplotlib import pyplot
 from matplotlib import image
 
+
 class Image:
+
     def __init__(self, fileName = None, label = None, Mat = None):
         if fileName != None:
             self.imgName = fileName
@@ -32,11 +35,14 @@ class Image:
 
         self.label   = label
 
-        self.stdImg  = Image._normalization(self.img)
+        #self.stdImg  = Image._normalization(self.img)
 
-        self.iimg    = Image._integrateImg(self.stdImg)
+        #self.iimg    = Image._integrateImg(self.stdImg)
 
-        self.vecImg  = self.iimg.transpose().flatten()
+        #self.vecImg  = self.iimg.transpose().flatten()
+
+        self.vecImg = Image._integrateImg( Image._normalization(self.img)  ).transpose().flatten()
+
 
     @staticmethod
     def _integrateImg(image):
@@ -47,18 +53,22 @@ class Image:
         #@iImg is integrated image of normalized image @self.stdImg
         iImg = numpy.zeros((row, col))
 
+        """
         for i in xrange(0, row):
             for j in xrange(0, col):
                 if j == 0:
                     iImg[i][j] = image[i][j]
                 else:
                     iImg[i][j] = iImg[i][j - 1] + image[i][j]
-
+        
         for j in xrange(0, col):
             for i in xrange(1, row):
                 iImg[i][j] += iImg[i - 1][j]
+        """
 
+        iImg = image.cumsum(axis=1).cumsum(axis=0)
         return iImg
+
 
     @staticmethod
     def _normalization(image):
@@ -88,6 +98,7 @@ class Image:
         stdImg = (image - meanVal) / stdValue
 
         return stdImg
+
 
     @staticmethod
     def show(image = None):
@@ -125,6 +136,7 @@ class ImageSet:
                 print "Loading ", processed, "%"
 
         print "Loading  100 %\n"
+
 
     def readNextImg(self):
         img = Image(self.imgDir + self.fileList[self.curFileIdx], self.label)
